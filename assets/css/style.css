@@ -168,14 +168,13 @@ h2 {
 }
 
 #contact-info {
-    width: 100%;
     list-style-type: none;
     display: flex;
+    flex-wrap: wrap;
     margin: 13px 0px;
 }
 
 #contact-info li {
-    width: 100%;
     text-decoration: underline;
     font-size: 24px;
     margin: 0px 80px;
