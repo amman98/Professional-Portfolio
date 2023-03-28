@@ -1,6 +1,7 @@
 /* variables */
 :root {
     --header-margin: 10px;
+    --main-margin: 10px;
     --section-color: lightblue;
 }
 
@@ -61,12 +62,20 @@ body {
 #subtitle {
     background-image: url("../images/subtitle-background.jpeg");
     height: 20vh;
-    text-align: right;
+    display: flex;
+    justify-content: space-between;
 }
 
 #subtitle > p {
-    background-color: rgb(89, 89, 238);
+    width: 300px;
+    background-color: var(--section-color);
     margin-right: var(--header-margin);
+}
+
+#profile-photo {
+    width: 10%;
+    height: 100%;
+    object-fit: contain;
 }
 
 /* 
@@ -80,6 +89,7 @@ main {
 
 /*  */
 h2 {
+    color: darkblue;
     font-size: 40px;
 }
 
@@ -88,22 +98,51 @@ h2 {
     display: flex;
 }
 
-#about-me > h2 {
+#about-me > h2, #work > h2, #contact > h2 {
     padding-right: 10px;
-    border-right: solid black 2px;
+    border-right: solid darkblue 2px;
 }
 
 #about-me > p {
-    margin-left: 10px;
+    margin-left: var(--main-margin);
 }
 
+/*  
+ * selectors for work section and its descendants
+*/
+
+
+#applications {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.app {
+    margin: 0 7px;
+    width: 40%;
+    height: 30%;   
+}
+
+.app img {
+    width: 100%;
+    height: 100%;
+    border: solid var(--section-color) 5px;
+    opacity: 0.5;
+    transition: all 1.5s ease;
+}
+
+.app img:hover {
+    opacity: 1.0;
+}
+
+.application-title {
+    padding: 10px;
+    font-size: 24px;
+    background-color: var(--section-color);
+}
+
+/* selectors for contact section and its descendants */
 #contact {
-    justify-content: space-between;
-}
-
-#contact > h2 {
-    padding-right: 10px;
-    border-right: solid black 2px;
 }
 
 #contact-info {
