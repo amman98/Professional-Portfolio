@@ -14,7 +14,7 @@
 
 body {
     background-color: rgb(230, 230, 230);
-    display:flex;
+    display: flex;
     flex-direction: column;
 }
 
@@ -45,7 +45,7 @@ body {
     margin-right: var(--header-margin);
 }
 
-#header-nav > ul > li {
+#header-nav li, #contact li {
     margin: 0px var(--header-margin);
     white-space: nowrap;
     padding: 2px;
@@ -67,9 +67,13 @@ body {
 }
 
 #subtitle > p {
+    font-size: 24px;
     width: 300px;
+    height: 50%;
     background-color: var(--section-color);
     margin-right: var(--header-margin);
+    position: relative;
+    top: 50px;
 }
 
 #profile-photo {
@@ -110,25 +114,36 @@ h2 {
 /*  
  * selectors for work section and its descendants
 */
-
-
 #applications {
     display: flex;
     flex-wrap: wrap;
 }
 
+/* makes first application larger in size than the other applications */
+#first-application {
+    width: 70%;
+}
+
 .app {
-    margin: 0 7px;
-    width: 40%;
-    height: 30%;   
+    margin-left: 7px;
+    width: 37%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+}
+
+.app a, .app img {
+    width: 100%;
+    height: 100%;
+}
+
+.app img, .app {
+    transition: all 1.5s ease;
 }
 
 .app img {
-    width: 100%;
-    height: 100%;
     border: solid var(--section-color) 5px;
     opacity: 0.5;
-    transition: all 1.5s ease;
 }
 
 .app img:hover {
@@ -139,17 +154,38 @@ h2 {
     padding: 10px;
     font-size: 24px;
     background-color: var(--section-color);
+    width: 25%;
+    position: relative;
+    top: 300px;
 }
 
 /* selectors for contact section and its descendants */
 #contact {
+    display: flex;
+    flex-direction: row;
 }
 
 #contact-info {
     list-style-type: none;
     display: flex;
+    margin: 13px 0px;
 }
 
-#contact-info > ul > li {
+#contact-info li {
+    text-decoration: underline;
+    font-size: 24px;
+    margin: 0px 104px;
+}
 
+/* media queries for resizing screen */
+@media screen and (max-width:992px) {
+    .app {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .app {
+        width: 90%;
+    }
 }
