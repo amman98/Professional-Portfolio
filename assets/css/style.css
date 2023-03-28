@@ -1,7 +1,10 @@
+/* variables */
 :root {
     --header-margin: 10px;
+    --section-color: lightblue;
 }
 
+/* universal selector */
 * {
     margin: 0px;
     padding: 0px;
@@ -14,15 +17,24 @@ body {
     flex-direction: column;
 }
 
+/* 
+ * id selector (header) and its descendants
+*/
 #header {
-    background-color: red;
+    height: 5vh;
+    background-color: rgb(81, 81, 81);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-h1 {
-    margin-left: var(--header-margin);
+#header > h1 {
+    background-color: var(--section-color);
+    padding-left: 100px;
+}
+
+ #header > h1, #header-nav {
+    margin: 5px 0px;
 }
 
 #header-nav > ul {
@@ -33,14 +45,72 @@ h1 {
 }
 
 #header-nav > ul > li {
+    margin: 0px var(--header-margin);
     white-space: nowrap;
     padding: 2px;
 }
 
 #header-nav a {
+    color: var(--section-color);
     font-size: 24px;
 }
 
+/* 
+ * id selector (section for subtitle) and its descendants
+ */
 #subtitle {
-    
+    background-image: url("../images/subtitle-background.jpeg");
+    height: 20vh;
+    text-align: right;
+}
+
+#subtitle > p {
+    background-color: rgb(89, 89, 238);
+    margin-right: var(--header-margin);
+}
+
+/* 
+ * element selector for main section and its descendants 
+ */
+main {
+    min-height: 75vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/*  */
+h2 {
+    font-size: 40px;
+}
+
+#about-me, #work, #contact {
+    margin: 3%;
+    display: flex;
+}
+
+#about-me > h2 {
+    padding-right: 10px;
+    border-right: solid black 2px;
+}
+
+#about-me > p {
+    margin-left: 10px;
+}
+
+#contact {
+    justify-content: space-between;
+}
+
+#contact > h2 {
+    padding-right: 10px;
+    border-right: solid black 2px;
+}
+
+#contact-info {
+    list-style-type: none;
+    display: flex;
+}
+
+#contact-info > ul > li {
+
 }
